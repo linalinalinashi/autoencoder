@@ -1,0 +1,23 @@
+step 1: download Anaconda3-5.2.0-Linux-x86_64.sh (for python 3.6)
+
+step 2: 
+$ source ~/anaconda3/bin/activate root
+$ anaconda-navigator
+
+- Error: ERROR download_api._get_url:378
+Expecting value: line 1 column 1 (char 0)
+File "/home/XXXXX/anaconda3/lib/python3.6/site-packages/anaconda_navigator/api/anaconda_api.py
+", line 811, in process_apps
+    versions=[vsdata.get('productVersion')],
+AttributeError: 'str' object has no attribute 'get'
+Solution: 
+Replace line 811 in file "/home/XXXX/anaconda3/lib/python3.6/site-packages/anaconda_navigator/api/anaconda_api.py"
+from versions=[vsdata.get('productVersion')], to versions=["1b8e8302e405050205e69b59abb3559592bb9e60"],
+
+step 3: install keras for python 3.6
+conda install -c conda-forge keras
+- environment error:
+conda upgrade -n base conda
+
+step 4: install tensorflow 
+conda install -c conda-forge tensorflow
